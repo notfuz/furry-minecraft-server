@@ -1,21 +1,9 @@
-/* ==========================================================
-   EASY SETTINGS - change these to tweak the whole look
-   ========================================================== */
 :root {
-  /* Put your screenshot at assets/background.png (or change this path) */
   --bg-image: url("assets/background.png");
-
-  /* How dark the image gets. 0 = no darkening, 1 = black.
-     Raise it if text is hard to read, lower it to show more of the screenshot. */
   --overlay: 0.60;
-
-  /* Panel see-through amount (0 = invisible, 1 = solid) */
   --panel-opacity: 0.55;
-
-  /* Accent color */
   --accent: #ff9b54;
   --accent-text: #2a1304;
-
   --text: #f4f2f0;
   --muted: #bdb8b3;
   --border: rgba(255, 255, 255, 0.14);
@@ -29,12 +17,11 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   color: var(--text);
-  background: #0e0d0c; /* fallback if the image is missing */
+  background: #0e0d0c;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
 }
 
-/* Background image with a dark overlay on top of it */
 .bg {
   position: fixed;
   inset: 0;
@@ -47,7 +34,6 @@ body {
 
 .wrap { width: min(920px, 92%); margin: 0 auto; }
 
-/* ---------- Panels (slightly see-through glass) ---------- */
 .panel {
   background: rgba(16, 14, 13, var(--panel-opacity));
   border: 1px solid var(--border);
@@ -64,7 +50,6 @@ h2 { font-size: 1.4rem; }
 h3 { font-size: 1.05rem; color: var(--accent); }
 p { margin: 0 0 1rem; color: var(--muted); }
 
-/* ---------- Hero ---------- */
 .hero { margin-top: 3rem; text-align: center; padding: 3rem 1.8rem; }
 .lead { max-width: 520px; margin: 0 auto 1.6rem; font-size: 1.05rem; }
 
@@ -105,7 +90,6 @@ p { margin: 0 0 1rem; color: var(--muted); }
 }
 .ip-box button:hover { filter: brightness(1.1); }
 
-/* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   padding: 0.7rem 1.3rem;
@@ -121,7 +105,6 @@ p { margin: 0 0 1rem; color: var(--muted); }
 .btn.primary { background: var(--accent); color: var(--accent-text); border-color: transparent; }
 .btn.discord { background: #5865f2; border-color: transparent; color: #fff; }
 
-/* ---------- Layout ---------- */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -137,7 +120,6 @@ code {
   color: var(--text);
 }
 
-/* ---------- Install steps ---------- */
 details {
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid var(--border);
@@ -154,7 +136,6 @@ summary {
 summary:hover { background: rgba(255, 255, 255, 0.05); }
 .details-body { padding: 0 1.1rem 1rem; color: var(--muted); }
 
-/* ---------- Rules ---------- */
 .rules {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -173,7 +154,6 @@ summary:hover { background: rgba(255, 255, 255, 0.05); }
 .foot { text-align: center; padding: 2.5rem 0 2rem; }
 .foot p { font-size: 0.85rem; margin: 0; }
 
-/* ---------- Mobile ---------- */
 @media (max-width: 760px) {
   .grid, .rules { grid-template-columns: 1fr; }
   .ip-box { flex-direction: column; align-items: stretch; text-align: center; }
