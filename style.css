@@ -1,0 +1,218 @@
+/* ==========================================================
+   EASY SETTINGS - change these to tweak the whole look
+   ========================================================== */
+:root {
+  /* Put your screenshot at assets/background.png (or change this path) */
+  --bg-image: url("assets/background.png");
+
+  /* How dark the image gets. 0 = no darkening, 1 = black.
+     Raise it if text is hard to read, lower it to show more of the screenshot. */
+  --overlay: 0.60;
+
+  /* Panel see-through amount (0 = invisible, 1 = solid) */
+  --panel-opacity: 0.55;
+
+  /* Accent color */
+  --accent: #5ee08a;
+  --accent-text: #08210f;
+
+  --text: #f2f4f3;
+  --muted: #b8c0bc;
+  --border: rgba(255, 255, 255, 0.14);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #0c0e0d; /* fallback if the image is missing */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Background image with a dark overlay on top of it */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(0, 0, 0, var(--overlay)), rgba(0, 0, 0, var(--overlay))),
+    var(--bg-image) center / cover no-repeat,
+    linear-gradient(160deg, #16221b, #0c0e0d);
+}
+
+.wrap { width: min(1000px, 92%); margin: 0 auto; }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.brand span { color: var(--accent); }
+.nav nav { display: flex; gap: 1.4rem; }
+.nav nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+.nav nav a:hover { color: var(--text); }
+
+/* ---------- Panels (slightly see-through glass) ---------- */
+.panel {
+  background: rgba(14, 18, 16, var(--panel-opacity));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  margin-top: 1.5rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+h1, h2 { line-height: 1.2; margin: 0 0 0.6rem; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: 1.4rem; }
+p { margin: 0 0 1rem; color: var(--muted); }
+
+/* ---------- Hero ---------- */
+.hero { margin-top: 2.5rem; text-align: center; padding: 3rem 1.8rem; }
+.eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.lead { max-width: 540px; margin: 0 auto 1.6rem; font-size: 1.05rem; }
+
+.ip-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: left;
+  padding: 0.8rem 0.9rem 0.8rem 1.2rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 1.4rem;
+}
+.ip-box .label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.ip-box code {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.ip-box button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--accent-text);
+  transition: filter 0.15s;
+}
+.ip-box button:hover { filter: brightness(1.1); }
+
+.actions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  transition: background 0.15s, transform 0.15s;
+}
+.btn:hover { background: rgba(255, 255, 255, 0.16); transform: translateY(-1px); }
+.btn.primary { background: var(--accent); color: var(--accent-text); border-color: transparent; }
+.btn.primary:hover { filter: brightness(1.1); background: var(--accent); }
+.btn.discord { background: #5865f2; border-color: transparent; color: #fff; }
+.btn.discord:hover { background: #6b77f5; }
+
+/* ---------- Layout bits ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.5rem;
+}
+.grid .panel { margin-top: 1.5rem; }
+
+ol { color: var(--muted); padding-left: 1.2rem; margin: 0 0 1.2rem; }
+ol li { margin-bottom: 0.3rem; }
+
+code {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.1em 0.4em;
+  border-radius: 5px;
+  color: var(--text);
+}
+.ip-box code { background: none; padding: 0; }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.step {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.step b {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-text);
+  margin-bottom: 0.6rem;
+}
+.step p { margin: 0; font-size: 0.95rem; }
+
+.foot { text-align: center; padding: 2.5rem 0 2rem; }
+.foot p { font-size: 0.85rem; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+  .grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .ip-box { flex-direction: column; align-items: stretch; text-align: center; }
+  .nav nav { gap: 1rem; }
+}
