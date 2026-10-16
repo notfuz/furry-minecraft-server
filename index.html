@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Glitching Minecraft Server</title>
-  <meta name="description" content="Join the server at mc.glitching.live. Grab the modpack and hop in our Discord.">
+  <title>Fuwwy Sevwev</title>
+  <meta name="description" content="Fuwwy Sevwev, a furry Minecraft server. Join at mc.glitching.live, grab the modpack and hop in our Discord.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,55 +12,33 @@
   <!-- Background image + dark overlay (both set in style.css) -->
   <div class="bg" aria-hidden="true"></div>
 
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top">Glitching<span>.live</span></a>
-      <nav>
-        <a href="#join">Join</a>
-        <a href="#modpack">Modpack</a>
-        <a href="#discord">Discord</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top" class="wrap">
+  <main class="wrap">
 
     <section class="hero panel">
-      <p class="eyebrow">Minecraft Server</p>
-      <h1>Welcome to the Glitch</h1>
-      <p class="lead">A community Minecraft server with a custom modpack. Install the pack, copy the address, and jump in.</p>
+      <h1>Fuwwy Sevwev</h1>
+      <p class="lead">A furry Minecraft server. Grab the modpack, join the Discord, and come play with us.</p>
 
-      <div class="ip-box" id="join">
+      <div class="ip-box">
         <div>
           <span class="label">Server address</span>
           <code id="ip">mc.glitching.live</code>
         </div>
         <button id="copy" type="button">Copy IP</button>
       </div>
-
-      <div class="actions">
-        <a class="btn primary" href="#modpack">Get the modpack</a>
-        <a class="btn" href="#discord">Join the Discord</a>
-      </div>
     </section>
 
     <section class="grid">
 
-      <article class="panel" id="modpack">
-        <h2>Modpack</h2>
-        <p>The modpack is on our GitHub. Download the latest file from the <strong>Releases</strong> tab.</p>
-        <ol>
-          <li>Open the Releases page and grab the newest version.</li>
-          <li>Import it into your launcher (Prism, CurseForge, etc.) or drop the files into your instance.</li>
-          <li>Launch the game and add <code>mc.glitching.live</code>.</li>
-        </ol>
+      <article class="panel">
+        <h2>Download the modpack</h2>
+        <p>The modpack is on our GitHub. Grab the latest file from the Releases tab and keep it handy for the install steps below.</p>
         <!-- TODO: replace YOUR-USER/YOUR-REPO with your real GitHub repo -->
-        <a class="btn primary" href="https://github.com/YOUR-USER/YOUR-REPO/releases/latest" target="_blank" rel="noopener">Download from Releases</a>
+        <a class="btn primary" href="https://github.com/YOUR-USER/YOUR-REPO/releases/latest" target="_blank" rel="noopener">Download latest release</a>
       </article>
 
-      <article class="panel" id="discord">
-        <h2>Discord</h2>
-        <p>Come hang out, find people to play with, get help with the modpack, and hear about server news first.</p>
+      <article class="panel">
+        <h2>Join the Discord</h2>
+        <p>Find people to play with, get help with the modpack, and catch server news first.</p>
         <!-- TODO: replace with your real Discord invite -->
         <a class="btn discord" href="https://discord.gg/YOUR-INVITE" target="_blank" rel="noopener">Join our Discord</a>
       </article>
@@ -68,12 +46,64 @@
     </section>
 
     <section class="panel">
-      <h2>How to join</h2>
-      <div class="steps">
-        <div class="step"><b>1</b><p>Download the modpack from Releases.</p></div>
-        <div class="step"><b>2</b><p>Install it in your launcher.</p></div>
-        <div class="step"><b>3</b><p>Add <code>mc.glitching.live</code> as a server.</p></div>
-        <div class="step"><b>4</b><p>Say hi in Discord.</p></div>
+      <h2>How to install</h2>
+
+      <details>
+        <summary>Step 1: Get a launcher</summary>
+        <div class="details-body">
+          We recommend <strong>Prism Launcher</strong>, <strong>CurseForge</strong> or the <strong>Modrinth App</strong>. Install whichever you like first.
+        </div>
+      </details>
+
+      <details>
+        <summary>Step 2: Import the modpack</summary>
+        <div class="details-body">
+          In your launcher, choose <em>Create New Instance</em> or <em>Import</em>, pick the file you downloaded from Releases, and let it build.
+        </div>
+      </details>
+
+      <details>
+        <summary>Step 3: Give it enough RAM</summary>
+        <div class="details-body">
+          Open the instance settings and allocate about <strong>4 to 6 GB</strong> of RAM so the game doesn't stutter or crash.
+        </div>
+      </details>
+
+      <details>
+        <summary>Step 4: Join the server</summary>
+        <div class="details-body">
+          Launch the game, add a server with the address <code>mc.glitching.live</code>, and jump in.
+        </div>
+      </details>
+    </section>
+
+    <section class="panel">
+      <h2>Server rules</h2>
+      <div class="rules">
+        <div class="rule">
+          <h3>General conduct</h3>
+          <ul>
+            <li>Be respectful to other players.</li>
+            <li>No hate speech or harassment.</li>
+            <li>Keep chat friendly.</li>
+          </ul>
+        </div>
+        <div class="rule">
+          <h3>Gameplay</h3>
+          <ul>
+            <li>No unapproved hacked clients.</li>
+            <li>X-ray texture packs are banned.</li>
+            <li>No griefing unprotected areas.</li>
+          </ul>
+        </div>
+        <div class="rule">
+          <h3>World building</h3>
+          <ul>
+            <li>Claim chunks to protect your builds.</li>
+            <li>Keep the landscape tidy.</li>
+            <li>Don't lag out public chunks.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
