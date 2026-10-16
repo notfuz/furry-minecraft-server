@@ -151,6 +151,18 @@ summary:hover { background: rgba(255, 255, 255, 0.05); }
 .rule ul { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: 0.95rem; }
 .rule li { margin-bottom: 0.4rem; }
 
+.donate { text-align: center; }
+.donate p { max-width: 560px; margin: 0 auto 1.2rem; }
+.donate-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.btn.cashapp { background: #00d632; border-color: transparent; color: #04200a; }
+.btn.paypal { background: #0070ba; border-color: transparent; color: #fff; }
+.btn.venmo { background: #3d95ce; border-color: transparent; color: #fff; }
+
 .foot { text-align: center; padding: 2.5rem 0 2rem; }
 .foot p { font-size: 0.85rem; margin: 0; }
 
