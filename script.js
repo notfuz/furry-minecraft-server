@@ -1,4 +1,3 @@
-// Copy-to-clipboard for the server address
 const copyBtn = document.getElementById("copy");
 const ip = document.getElementById("ip");
 
@@ -7,7 +6,6 @@ copyBtn.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(text);
   } catch (e) {
-    // Fallback for older browsers
     const range = document.createRange();
     range.selectNode(ip);
     const sel = window.getSelection();
