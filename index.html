@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitching Live - Server Hub</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --container-bg: #1e1e1e;
+            --accent-color: #5865F2; /* Discord Purple */
+            --download-color: #238636; /* GitHub Green */
+            --text-color: #ffffff;
+            --text-muted: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Server IP Banner */
+        .ip-banner {
+            background-color: #2a2a2a;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            border: 1px solid #3a3a3a;
+        }
+
+        .ip-banner span {
+            color: var(--accent-color);
+        }
+
+        /* Two Column Layout for Actions */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--container-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            text-align: center;
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: opacity 0.2s ease;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-download {
+            background-color: var(--download-color);
+        }
+
+        /* Collapsible Accordion */
+        .accordion {
+            background-color: var(--container-bg);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .accordion-item summary {
+            padding: 15px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #252525;
+            user-select: none;
+            outline: none;
+        }
+
+        .accordion-item summary:hover {
+            background-color: #2d2d2d;
+        }
+
+        .accordion-content {
+            padding: 20px;
+            background-color: var(--container-bg);
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        /* Rules Grid */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .rule-box {
+            background-color: var(--container-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .rule-box h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .rule-box ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .rule-box li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Glitching Live</h1>
+            <p>Modpack, Installation Setup, & Server Guidelines</p>
+        </header>
+
+        <!-- Live Server IP Banner -->
+        <div class="ip-banner">
+            Server IP Address: <span>play.glitching.live</span>
+        </div>
+
+        <!-- Top Section: Download and Discord -->
+        <div class="main-grid">
+            
+            <!-- Modpack Card -->
+            <div class="card">
+                <div>
+                    <h2>📦 Download Modpack</h2>
+                    <p style="color: var(--text-muted); line-height: 1.5;">Get our official custom client zip file directly from our developer repository branch. Keep this file ready for the install guide below.</p>
+                </div>
+                <!-- Replace URL below with your actual GitHub repo release zip link -->
+                <a href="https://github.com" class="btn btn-download">Download Latest ZIP</a>
+            </div>
+
+            <!-- Discord Widget Card -->
+            <div class="card" style="padding: 15px;">
+                <!-- Replace server and shard IDs with your actual active Discord Widget Code details -->
+                <iframe src="https://discord.com" width="100%" height="250" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+
+        </div>
+
+        <!-- Installation Guide Section -->
+        <h2>🛠️ Step-by-Step Installation</h2>
+        
+        <div class="accordion">
+            <details class="accordion-item">
+                <summary>Step 1: Download a Custom Launcher</summary>
+                <div class="accordion-content">
+                    We highly recommend using <strong>CurseForge</strong>, <strong>Prism Launcher</strong>, or <strong>Modrinth App</strong> to run this pack cleanly. Download and install your preferred tool setup first.
+                </div>
+            </details>
+        </div>
+
+        <div class="accordion">
+            <details class="accordion-item">
+                <summary>Step 2: Import the Modpack ZIP</summary>
+                <div class="accordion-content">
+                    Open your launcher app dashboard. Select <em>"Create New Instance"</em> or <em>"Import Profile"</em>, point the file picker directly to the <code>.zip</code> file you downloaded above, and click build.
+                </div>
+            </details>
+        </div>
+
+        <div class="accordion">
+            <details class="accordion-item">
+                <summary>Step 3: Allocate System RAM Memory</summary>
+                <div class="accordion-content">
+                    Before hitting play, click on the instance configuration parameters settings. Ensure you have allocated at least <strong>4GB to 6GB of RAM</strong> to prevent system client performance drops or crash loops.
+                </div>
+            </details>
+        </div>
+
+
+        <!-- Rules Section -->
+        <h2 style="margin-top: 50px;">📜 Official Server Rules</h2>
+        
+        <div class="rules-grid">
+            <div class="rule-box">
+                <h3>🛡️ General Conduct</h3>
+                <ul>
+                    <li>Be respectful to community players.</li>
+                    <li>No hate speech or harassment.</li>
+                    <li>Keep chat friendly.</li>
+                </ul>
+            </div>
+            <div class="rule-box" style="border-top-color: #e056fd;">
+                <h3>⚔️ Gameplay Terms</h3>
+                <ul>
+                    <li>No unapproved hack clients.</li>
+                    <li>X-ray texturepacks are banned.</li>
+                    <li>No griefing unprotected zones.</li>
+                </ul>
+            </div>
+            <div class="rule-box" style="border-top-color: #badc58;">
+                <h3>🪵 World Building</h3>
+                <ul>
+                    <li>Claim chunks to protect builds.</li>
+                    <li>Keep clean visual landscapes.</li>
+                    <li>Do not lag out public chunks.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
